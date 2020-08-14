@@ -17,12 +17,15 @@ export const renderComment = (userId, doc, element) => {
         <p>${date}</p>
       </div>
     </div>
-    <p class="comment-p">${comment.content}</p>`;
+    <p class="comment-p"></p>`;
   div.innerHTML = template;
+  // CONTENT
+  const commentContent = div.querySelector('.comment-p');
+  commentContent.textContent = comment.content;
   // DISPLAY NAME AND PHOTO URL
   const commentUserName = div.querySelector('.comment-userName');
   getDocument('users', comment.userId, (userDoc) => {
-    commentUserName.innerHTML = userDoc.data().userName;
+    commentUserName.textContent = userDoc.data().userName;
     if (userDoc.data().userPhoto) {
       const photoComment = div.querySelector('.user-photo-comment');
       photoComment.src = userDoc.data().userPhoto;

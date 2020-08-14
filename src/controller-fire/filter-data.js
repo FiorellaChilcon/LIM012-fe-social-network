@@ -13,9 +13,9 @@ export const getPosts = (userId, element, query, value) => firebase.firestore().
       } else if (change.type === 'modified') {
         const div = document.getElementById(change.doc.id);
         const contentTag = div.querySelector('.main-post p');
-        contentTag.innerHTML = change.doc.data().content;
+        contentTag.textContent = change.doc.data().content;
         const likeCounter = div.querySelector('.like-counter');
-        likeCounter.innerHTML = change.doc.data().likes;
+        likeCounter.textContent = change.doc.data().likes;
         if (window.location.hash === '#/home' && change.doc.data().visibility === 'private') {
           element.removeChild(div);
         }

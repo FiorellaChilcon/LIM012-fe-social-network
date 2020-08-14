@@ -1,5 +1,4 @@
 /* eslint-disable no-param-reassign */
-// eslint-disable-next-line import/no-cycle
 import { deleteDocument, deleteDocumentIdFromUserCollection, updateDocument } from '../firebase/firestore.js';
 
 export const renderMenu = (collection, userField, userId, doc, contentToEdit) => {

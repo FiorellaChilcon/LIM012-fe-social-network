@@ -48,7 +48,7 @@ export const renderPost = (userId, doc, element) => {
   postContent.textContent = post.content;
   // DISPALY NAME AND PHOTO URL
   getDocument('users', post.userId, (userDoc) => {
-    postUserName.innerHTML = userDoc.data().userName;
+    postUserName.textContent = userDoc.data().userName;
     if (userDoc.data().userPhoto) {
       const photoPost = div.querySelector('.user-photo-post');
       photoPost.src = userDoc.data().userPhoto;
